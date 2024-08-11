@@ -4,8 +4,6 @@ import { getUserByUsername, createUser } from "../models/userModel";
 import { config } from "../config";
 
 export async function registerUser(username: string, password: string) {
-  console.log(username, password);
-
   if (!username || !password) {
     throw new Error("Username and password are required");
   }

@@ -1,0 +1,5 @@
+# Dependency directories
+node_modules/
+
+# Directory for compiled files (TypeScript compiled to JavaScript)
+dist/

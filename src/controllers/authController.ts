@@ -2,8 +2,6 @@ import { Request, Response } from "express";
 import { registerUser, authenticateUser } from "../services/authService";
 
 export async function register(req: Request, res: Response) {
-  console.log(req.body);
-
   try {
     const { username, password } = req.body;
     await registerUser(username, password);

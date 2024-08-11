@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 
 export async function getPublicContent(req: Request, res: Response) {
-  console.log("getPublicContent");
-
   try {
     res.status(200).send({ message: "This is a public route" });
   } catch (error: unknown) {

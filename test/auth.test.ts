@@ -10,7 +10,7 @@ const request = chai.request(app);
 
 describe("Auth Routes", function () {
   before(async function () {
-    await setupDatabase(); // Configurer la base de données avant les tests
+    await setupDatabase(); // Set up the database before tests
   });
 
   it("should register a user", function (done) {

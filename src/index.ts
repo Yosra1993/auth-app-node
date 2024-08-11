@@ -7,7 +7,7 @@ import { setupDatabase } from "./models/userModel";
 
 const app = express();
 
-// Configuration de la base de données avant le démarrage du serveur
+// Database setup before starting the server
 setupDatabase()
   .then(() => {
     console.log("Database setup complete.");
