@@ -24,11 +24,14 @@ auth-app-node/
 │   │   ├── privateController.ts  # Controller for private routes   
 │   │   └── publicController.ts   # Controller for public routes   
 │   │
+|   ├── logger/                   # Logger configuration
+|   |   └── index.ts 
 │   ├── middlewares/              # Middleware for request handling   
 │   │   └── authMiddleware.ts     # Middleware for JWT validation   
 │   │
 │   ├── models/                   # Data models   
 │   │   └── userModel.ts          # User model  
+|   |   └── database.ts           # SQLite database connection 
 │   │
 │   ├── routes/                   # Route definitions  
 │   │   ├── authRoutes.ts         # Authentication routes  
@@ -38,6 +41,12 @@ auth-app-node/
 │   ├── services/                 # Services for business logic
 │   │   └── authService.ts        # Authentication service
 │   │
+│   ├── types/                    # Type definitions and interfaces 
+│   │   └── userTypes.ts          # TypeScript types and interfaces for users 
+|   |
+|   ├── validation/               # Validation schemas and logic  
+│   │   └── validationSchemas.ts  # Joi schemas for request validation
+|   |                             
 │   └── index.ts                  # Application entry point
 │
 ├── test/                         # Unit tests for the application
@@ -67,7 +76,34 @@ auth-app-node/
    bash
 
    npm install
-   
+
+
+## Configuration
+Create a .env file in the root of the project with the following content:
+
+dotenv
+
+Copy code
+
+```
+
+# Secret clé pour JWT (à utiliser pour signer les tokens)
+JWT_SECRET=your_jwt_secret_key
+
+# URL de connexion à la base de données SQLite
+DATABASE_URL=./database.db
+
+# Autres configurations selon vos besoins
+PORT=3001
+
+```
+
+Replace your_jwt_secret_key with a secure key for signing JWT tokens.
+
+Ensure that the path to the database in DATABASE_URL is correct and accessible.
+
+Modify the port if necessary, depending on your requirements or port conflicts.
+
 
 ### Running the Server
 

@@ -1,41 +1,28 @@
-import sqlite3 from "sqlite3";
-import { open, Database } from "sqlite";
+import { User } from "../types/userTypes";
+import { getDatabase } from "./database";
 
-let database: Database | null = null;
+/**
+ * Retrieves a user from the database by their username.
+ * Queries the `users` table to find a user with the given username.
+ * @param {string} username - The username of the user to retrieve.
+ * @returns {Promise<User | undefined>} A promise that resolves to the user object if found, or `undefined` if not found.
+ */
 
-async function getDatabase() {
-  if (!database) {
-    database = await open({
-      filename: "./database.db",
-      driver: sqlite3.Database,
-    });
-  }
-  return database;
-}
-
-// Function to set up the database
-export async function setupDatabase(): Promise<void> {
+export async function getUserByUsername(
+  username: string
+): Promise<User | undefined> {
   const db = await getDatabase();
-  try {
-    console.log("Creating table if not exists...");
-    await db.exec(`
-      CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT UNIQUE NOT NULL,
-        password TEXT NOT NULL
-      );
-    `);
-    console.log("Table created or already exists");
-  } catch (error) {
-    console.error("Error setting up database:", error);
-    throw new Error("Error setting up database");
-  }
+  return db.get<User>("SELECT * FROM users WHERE username = ?", [username]);
 }
 
-export async function getUserByUsername(username: string): Promise<any> {
-  const db = await getDatabase();
-  return db.get("SELECT * FROM users WHERE username = ?", [username]);
-}
+/**
+ * Creates a new user in the database with the specified username and hashed password.
+ * Inserts the user details into the `users` table.
+ * @param {string} username - The username of the new user.
+ * @param {string} hashedPassword - The hashed password of the new user.
+ * @returns {Promise<void>} A promise that resolves when the user has been inserted into the database.
+ * @throws {Error} Throws an error if there is an issue inserting the user into the database.
+ */
 
 export async function createUser(
   username: string,

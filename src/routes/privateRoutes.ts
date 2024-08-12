@@ -4,6 +4,6 @@ import { authenticateToken } from "../middlewares/authMiddleware"; // Middleware
 
 const router = Router();
 
-router.get("/private", authenticateToken, getPrivateContent);
+router.get("/", authenticateToken, getPrivateContent);
 
 export default router;

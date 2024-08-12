@@ -3,7 +3,7 @@ import authRoutes from "./routes/authRoutes";
 import publicRoutes from "./routes/publicRoutes";
 import privateRoutes from "./routes/privateRoutes";
 import { config } from "./config";
-import { setupDatabase } from "./models/userModel";
+import { setupDatabase } from "./models/database";
 
 const app = express();
 
@@ -19,8 +19,8 @@ setupDatabase()
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
-app.use("/api", publicRoutes);
-app.use("/api", privateRoutes);
+app.use("/api/public", publicRoutes);
+app.use("/api/private", privateRoutes);
 
 app.listen(config.port, () => {
   console.log(`Server running on port ${config.port}`);

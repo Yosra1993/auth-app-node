@@ -3,6 +3,6 @@ import { getPublicContent } from "../controllers/publicController";
 
 const router = Router();
 
-router.get("/public", getPublicContent);
+router.get("/", getPublicContent);
 
 export default router;
