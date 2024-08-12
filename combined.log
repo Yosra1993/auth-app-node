@@ -43,3 +43,16 @@
 {"error":"Invalid username or password","level":"error","message":"Error authenticating user:","timestamp":"2024-08-12T14:32:29.099Z","username":"testuser"}
 {"error":"Error authenticating user","level":"error","message":"Login error:","timestamp":"2024-08-12T14:32:29.100Z"}
 {"level":"error","message":"Authorization header missing","timestamp":"2024-08-12T14:37:49.107Z"}
+{"error":"Error inserting user into the database","level":"error","message":"Error registering user:","timestamp":"2024-08-12T14:40:13.776Z","username":"testuser"}
+{"error":"Error registering user","level":"error","message":"Registration error:","timestamp":"2024-08-12T14:40:13.778Z"}
+{"level":"warn","message":"Authentication failed: Invalid username or password.","timestamp":"2024-08-12T14:41:51.676Z","username":"testuser"}
+{"error":"Invalid username or password","level":"error","message":"Error authenticating user:","timestamp":"2024-08-12T14:41:51.678Z","username":"testuser"}
+{"error":"Error authenticating user","level":"error","message":"Login error:","timestamp":"2024-08-12T14:41:51.678Z"}
+{"level":"info","message":"User authenticated successfully:","timestamp":"2024-08-12T14:42:06.106Z","username":"testuser"}
+{"level":"info","message":"User authenticated successfully:","timestamp":"2024-08-12T14:42:07.560Z","username":"testuser"}
+{"error":"Error inserting user into the database","level":"error","message":"Error registering user:","timestamp":"2024-08-12T14:43:18.883Z","username":"testuser"}
+{"error":"Error registering user","level":"error","message":"Registration error:","timestamp":"2024-08-12T14:43:18.885Z"}
+{"error":"Error inserting user into the database","level":"error","message":"Error registering user:","timestamp":"2024-08-12T14:43:52.783Z","username":"testuser"}
+{"error":"Error registering user","level":"error","message":"Registration error:","timestamp":"2024-08-12T14:43:52.785Z"}
+{"error":"Error inserting user into the database","level":"error","message":"Error registering user:","timestamp":"2024-08-12T14:45:40.629Z","username":"testuser"}
+{"error":"Error registering user","level":"error","message":"Registration error:","timestamp":"2024-08-12T14:45:40.631Z"}

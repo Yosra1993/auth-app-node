@@ -6,3 +6,10 @@ dist/
 
 # Environment variables
 .env
+
+# Logs
+*.log
+combined.log
+
+# SQLite database file
+database.db

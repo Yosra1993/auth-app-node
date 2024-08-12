@@ -81,7 +81,7 @@ auth-app-node/
 ## Configuration
 Create a .env file in the root of the project with the following content:
 
-dotenv
+.env
 
 Copy code
 
