@@ -168,13 +168,8 @@ This will serve the compiled JavaScript files from the `dist` directory.
 
 ## Tests
 
-The application includes unit tests for the authentication routes. You can run the tests using the following command:
+The application includes unit tests for the authentication routes, implemented using Mocha and Chai. The tests are defined in the auth.test.ts file located in the test directory.
 
-To run unit tests:
-
-bash
-
-npm test
 
 
 
